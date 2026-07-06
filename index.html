@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Shop Manuals</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div>
+      <h1>My Shop Manuals</h1>
+      <p>Personal machine manuals, maintenance logs, parts, and repair history.</p>
+    </div>
+    <button id="installBtn" class="ghost hidden">Install</button>
+  </header>
+
+  <main>
+    <section class="toolbar">
+      <input id="searchInput" placeholder="Search manuals, parts, repairs..." />
+      <button onclick="exportData()">Export Backup</button>
+      <label class="buttonLike">Import Backup<input id="importFile" type="file" accept="application/json" hidden></label>
+    </section>
+
+    <section id="machineSection">
+      <div class="sectionTitle">
+        <h2>Machines</h2>
+        <button onclick="showMachineForm()">+ Add Machine</button>
+      </div>
+      <div id="machineList" class="cards"></div>
+    </section>
+
+    <section id="detailSection" class="hidden">
+      <button class="ghost" onclick="backToMachines()">← Back</button>
+      <div id="machineHeader"></div>
+
+      <nav class="tabs">
+        <button onclick="setTab('manual')" class="active" id="tab-manual">Manual</button>
+        <button onclick="setTab('maintenance')" id="tab-maintenance">Maintenance</button>
+        <button onclick="setTab('repairs')" id="tab-repairs">Repairs</button>
+        <button onclick="setTab('parts')" id="tab-parts">Parts</button>
+        <button onclick="setTab('notes')" id="tab-notes">Notes</button>
+      </nav>
+
+      <div id="tabContent"></div>
+    </section>
+  </main>
+
+  <dialog id="formDialog">
+    <form method="dialog" id="modalForm">
+      <h2 id="formTitle">Add</h2>
+      <div id="formFields"></div>
+      <menu>
+        <button value="cancel" class="ghost">Cancel</button>
+        <button id="saveFormBtn" value="default">Save</button>
+      </menu>
+    </form>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
