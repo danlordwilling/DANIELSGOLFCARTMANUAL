@@ -1,0 +1,1372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f172a">
+<title>Daniel's 2003 Club Car DS Manual — Updated 2026-09-08</title>
+<style>
+:root{--bg:#0b1220;--paper:#fff8e7;--ink:#1e293b;--accent:#38bdf8;--line:#d0bd8a}
+*{box-sizing:border-box} body{margin:0;background:linear-gradient(145deg,#0f172a,#111827);color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+.topbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:.5rem;padding:.75rem;background:#0f172a;color:white;border-bottom:1px solid #334155}
+.topbar h1{margin:0;font-size:1rem;line-height:1.1} .topbar small{display:block;color:#cbd5e1;font-size:.7rem}
+button{border:0;border-radius:14px;padding:.72rem .85rem;font-weight:800;cursor:pointer} .icon-btn{background:#1e293b;color:white;border:1px solid #334155;min-width:44px} .primary{background:var(--accent);color:#06121d}
+.shell{max-width:980px;margin:0 auto;padding:1rem} .book{min-height:72vh;background:var(--paper);border:1px solid var(--line);border-radius:22px;box-shadow:0 22px 55px rgba(0,0,0,.45);overflow:hidden}
+.page{display:none;min-height:72vh;animation:turn .18s ease-out} .page.active{display:block} @keyframes turn{from{transform:translateX(14px);opacity:.2}to{transform:none;opacity:1}}
+.page-inner{padding:1.25rem} .chapter-kicker{color:#8a6d2f;text-transform:uppercase;letter-spacing:.12em;font-size:.78rem;font-weight:900;text-align:center}
+h2{font-family:Georgia,serif;font-size:1.8rem;text-align:center;margin:.35rem 0 1rem;border-bottom:2px solid var(--line);padding-bottom:.75rem}
+pre{white-space:pre-wrap;word-break:break-word;font-family:Georgia,'Times New Roman',serif;font-size:1.04rem;line-height:1.62;margin:0;color:var(--ink)}
+.controls{display:flex;align-items:center;justify-content:space-between;gap:.5rem;margin-top:1rem;color:white} .pagecount{font-weight:800;color:#e2e8f0;text-align:center}
+.drawer{position:fixed;inset:0;background:rgba(0,0,0,.62);z-index:80;display:none} .drawer.open{display:block} .panel{width:min(430px,94vw);height:100%;background:#0f172a;color:white;padding:1rem;overflow:auto;box-shadow:20px 0 40px rgba(0,0,0,.45)}
+.panel-head{display:flex;align-items:center;justify-content:space-between;gap:.5rem} .panel h2{font-family:system-ui,sans-serif;border:0;color:white;text-align:left;font-size:1.35rem;padding:0}
+.search{width:100%;padding:.85rem;border-radius:14px;border:1px solid #334155;background:#020617;color:white;font-size:1rem;margin:.75rem 0}
+.toc-item{width:100%;text-align:left;background:#172033;color:white;border:1px solid #334155;margin:.28rem 0;display:flex;gap:.75rem;align-items:center} .toc-item span{color:#38bdf8;min-width:2.2rem}
+.note-box{margin-top:1rem;padding:.9rem;border:1px solid #334155;border-radius:14px;background:#111827;color:#cbd5e1;font-size:.86rem;line-height:1.45}
+@media(max-width:600px){.shell{padding:.55rem}.page-inner{padding:1rem}h2{font-size:1.5rem}pre{font-size:1rem}}
+@media print{body{background:white}.topbar,.drawer,.controls{display:none!important}.shell{max-width:none;padding:0}.book{box-shadow:none;border:0}.page{display:block!important;min-height:auto;page-break-after:always}}
+
+.section-card{border:1px solid #d0bd8a;border-radius:16px;padding:1rem;margin:1rem 0;background:#fffdf5}
+.section-card h3{font-family:Georgia,serif;margin:.15rem 0 .65rem;font-size:1.2rem}
+.status{font-weight:900}
+.checklist{border:2px solid #8a6d2f;border-radius:16px;padding:1rem;margin-top:1.25rem;background:white}
+.checklist h3{text-align:center;font-family:Georgia,serif;margin:.2rem 0 .8rem}
+.checklist .meta{display:grid;grid-template-columns:1fr 1fr;gap:.55rem;margin:.8rem 0 1rem}
+.checklist label{display:block;border-bottom:1px solid #64748b;min-height:1.55rem}
+.checkline{margin:.42rem 0;line-height:1.35}
+.checkline::before{content:"☐ ";font-size:1.08rem}
+.print-check-btn{display:block;margin:1rem auto 0;background:#8a6d2f;color:white}
+.smallnote{font-size:.9rem;color:#475569;line-height:1.45}
+@media print{
+  .print-check-btn{display:none!important}
+  body.print-one .page{display:none!important}
+  body.print-one .page.print-target{display:block!important}
+  body.print-one .page.print-target .page-inner>*:not(.checklist){display:none!important}
+  body.print-one .page.print-target .checklist{display:block!important;border:0;padding:0;margin:0}
+}
+
+</style></head>
+<body>
+<header class="topbar"><button class="icon-btn" id="openToc">☰</button><div><h1>Daniel's Club Car Manual</h1><small>2003 Club Car DS Gas • Updated 2026-09-08</small></div><button class="icon-btn" id="printBtn">PDF</button></header>
+<div class="drawer" id="drawer"><aside class="panel"><div class="panel-head"><h2>Contents</h2><button class="icon-btn" id="closeToc">✕</button></div>
+<input class="search" id="search" placeholder="Search chapters…"><nav id="tocList"><button class="toc-item" data-page="0"><span>01</span>Custom Digital Service Manual</button><button class="toc-item" data-page="1"><span>02</span>Vehicle Information</button><button class="toc-item" data-page="2"><span>03</span>Active Pins</button><button class="toc-item" data-page="3"><span>04</span>Pay Attention / Do Later</button><button class="toc-item" data-page="4"><span>05</span>Projects — Recent History</button><button class="toc-item" data-page="5"><span>06</span>Brainstorming / Future Ideas</button><button class="toc-item" data-page="6"><span>07</span>Complete Modification History</button><button class="toc-item" data-page="7"><span>08</span>Known Issues and Operating Behavior</button><button class="toc-item" data-page="8"><span>09</span>Maintenance Schedule</button><button class="toc-item" data-page="9"><span>10</span>Engine Oil and Filter Service</button><button class="toc-item" data-page="10"><span>11</span>Fuel Pump Inspection and Replacement</button><button class="toc-item" data-page="11"><span>12</span>Carburetor Adjustment</button><button class="toc-item" data-page="12"><span>13</span>Carburetor Replacement</button><button class="toc-item" data-page="13"><span>14</span>Suspension and Steering</button><button class="toc-item" data-page="14"><span>15</span>Brake System</button><button class="toc-item" data-page="15"><span>16</span>Rear Transaxle / Differential</button><button class="toc-item" data-page="16"><span>17</span>Parts, Hardware &amp; Specifications</button><button class="toc-item" data-page="17"><span>18</span>Repair History</button><button class="toc-item" data-page="18"><span>19</span>Printable Service Record Pages</button><button class="toc-item" data-page="19"><span>20</span>Electrical Architecture — Current Plan</button><button class="toc-item" data-page="20"><span>21</span>Clutch / Belt Update — BLT-0100</button><button class="toc-item" data-page="21"><span>22</span>Electrical / Battery Update</button><button class="toc-item" data-page="22"><span>23</span>P10 S1 — Master Reference</button><button class="toc-item" data-page="23"><span>24</span>P10 S2 A5 — 1,000-mi / Annual Service</button><button class="toc-item" data-page="24"><span>25</span>September 2026 Updates</button></nav>
+<div class="note-box">Current single-file manual revision: <b>September 8, 2026</b>. Replace the old <b>index.html</b> in the existing GitHub Pages site with this file. Browser remembers the last page.</div></aside></div>
+<main class="shell"><section class="book"><article class="page" id="page-1" data-title="custom digital service manual">
+<div class="page-inner"><div class="chapter-kicker">Cover</div><h2>Custom Digital Service Manual</h2>
+<pre>2003 Club Car DS Gas
+Updated: September 8, 2026
+
+A living phone-first manual for this exact cart.
+
+TRACKING RULES
+• Ask one question at a time during diagnostics.
+• When multiple questions are needed, number them as sub-pins.
+• “Pin it and move on” = preserve it as unfinished / TO VERIFY LATER.
+• Separate confirmed facts from assumptions.
+• Preserve history; new discoveries update old pins/projects rather than erasing them.
+• Organize active work by relevance and priority when possible.
+
+TRACKER
+📌 Pins = active/current work
+🛠 Projects = history and evolution of work
+💡 Brainstorming = promising ideas not yet committed
+👀 Pay Attention = observations/tests to remember later</pre></div></article><article class="page" id="page-2" data-title="vehicle information">
+<div class="page-inner"><div class="chapter-kicker">Vehicle</div><h2>Vehicle Information</h2>
+<pre>Make: Club Car
+Model: DS
+Year: 2003
+Fuel: Gasoline
+Engine: Stock Kawasaki gasoline engine
+Exact Engine Model: UNKNOWN / low-priority pin
+Ownership: Approximately 3+ years with current owner
+Estimated total mileage: 6,000+ miles
+Approximate owner mileage: 1,000+ miles
+
+PERFORMANCE / OPERATING CHARACTER
+• Governor modified/bypassed.
+• Personal best recorded speed: 32 mph; alleged/previous estimate about 35 mph.
+• Current BLT-0100 setup appears to reach similar top speed, but same-road verification remains pending.
+• Cart is intentionally rewired to idle rather than shutting engine off normally; key/kill switch still shut it down.
+• Neutral behaves similarly to service mode because of idle-bypass arrangement.</pre></div></article>
+<article class="page" id="page-3" data-title="active pins current work">
+<div class="page-inner"><div class="chapter-kicker">📌 Current Work</div><h2>Active Pins</h2>
+<pre>P1 — Battery Relocation / Permanent Installation
+STATUS: FUNCTIONAL / FINISHING WORK OPEN
+• Rear battery relocation is functional.
+• New 4 AWG positive battery-to-solenoid cable installed.
+• New 4 AWG negative battery-to-stock-frame-ground cable installed.
+• Cart starts/runs with only those two heavy mains connected.
+• Permanent rigid battery hold-down and final cable/terminal protection remain.
+
+P2 — Accessory Electrical System / Complete Rewire
+STATUS: MAJOR ACTIVE PROJECT
+• VW 12-position fuse block is installed in the prior/factory fuse location.
+• One block now has all 12 output wires populated.
+• Block is temporarily secured with zip ties; permanent mounting still needed.
+• Heavy red common feed supplies all 12 positions.
+• Main accessory feed is currently reported as 20A — VERIFY.
+• App-controlled LED circuit is currently reported as 3A — VERIFY.
+• Horn circuit is currently reported as 5A — VERIFY.
+• Exact physical Fuse Locations for LED and horn circuits remain TBD.
+• Front-cowl accessory/lighting wiring is being rebuilt from scratch, one device at a time.
+• Preferred accessory return: Battery − → dedicated 8 AWG copper → isolated negative bus → accessory negatives.
+• External RED WOLF remote utility/jump studs have been received; install pending.
+• Rear work light is physically mounted driver-side rear step; NOT wired yet.
+• Third brake light, roof wiring backbone and Focus center-grille module remain planned.
+• Fuse naming rule: Fuse Location 1 = frontmost; Fuse Location 12 = rearmost.
+
+P3 — Cold-Start / Throttle-Bog Diagnosis
+STATUS: OPEN
+• Cold starts remain throttle-sensitive; choke used when cold.
+• Rapid pedal application can bog/stall.
+• Gradual throttle works.
+• Strong acceleration sweet spot near ~1/4 throttle, with bog just before it.
+• Issue predates BLT-0100.
+
+P4 — BLT-0100 Belt / Clutch Monitoring
+STATUS: MOSTLY MONITORING
+• Major acceleration and pulling improvement confirmed.
+• Same-road top-speed confirmation still optional/pending.
+• Secondary full opening not visually verified.
+• Belt currently shows no abnormal wear.
+• Idle squeak near primary/belt center remains open.
+
+P5 — Front-End Alignment
+STATUS: OPEN
+• Tie-rod ends replaced.
+• Alignment still needed.
+
+P6 — Tires / Wheel Replacement
+STATUS: ACTIVE
+• Sept. 8, 2026: front passenger 22x10-10 tire popped.
+• Ordered two Antego ATW-045 20x10.00-10 tires on 10x7 matte-black wheels.
+• Expected Sept. 10, 2026.
+• User intended to order four but listing was a set of two.
+• Plan: install both new assemblies on FRONT axle; keep matched 22x10-10 pair on rear temporarily.
+• If fit/quality/ride are good, order two more identical assemblies for rear.
+
+P7 — Exact Kawasaki Engine Identification
+STATUS: LOW PRIORITY / UNCONFIRMED
+• 2003 OEM documentation points toward Kawasaki FE290 OHV.
+• Physical engine identification is still required before treating FE290-specific parts/specs as confirmed.
+
+P8 — Generator Mode / Auxiliary Alternator & Inverter
+STATUS: FUTURE CONCEPT
+• Keep stock starter/generator for normal use.
+• Add ~35–60A internally regulated alternator and inverter system for on-demand tool power.
+
+P9 — Winch Rewire
+STATUS: OUT OF SERVICE
+• Rear winch wiring was melted after external wire contacted muffler.
+• Rewire required before use.
+• Trace internal power path before choosing external wire size or fuse.
+• New routing must maintain deliberate exhaust clearance and abrasion protection.
+
+P10 — Club Car Master Reference
+STATUS: ACTIVE REFERENCE SYSTEM
+• S1 General Parts Breakdown.
+• S2 Scheduled Maintenance Guide.
+• Maintenance scheduling uses mileage and/or elapsed time ONLY — never engine hours.</pre>
+</div></article><article class="page" id="page-4" data-title="pay attention / do later">
+<div class="page-inner"><div class="chapter-kicker">👀 Tracker</div><h2>Pay Attention / Do Later</h2>
+<pre>1. Secondary clutch opening/full shift
+   • Observe only when convenient; similar top speed makes this less urgent.
+
+2. Primary/belt idle squeak
+   • Note when it occurs, warm vs cold, and whether belt/primary contact seems related.
+
+3. Same-road top-speed check
+   • Optional/pending for apples-to-apples comparison with old setup.
+
+4. VW fuse block documentation
+   • Later photograph backside, plugs and molded VW/Audi part numbers.
+   • Goal: identify exact application/document layout.
+   • Correct fuse terminals are already ordered; common red feed is already confirmed.
+
+5. Winch 15A progressive test
+   • Install 15A fuse near source in current 12 AWG inline holder.
+   • Brief unloaded run → light pull → progressively heavier/useful pull.
+   • Do NOT intentionally stall it.
+   • After each step feel/check 12 AWG wiring, fuse holder, splices/connectors and 12→~16 AWG-looking transition.
+   • A surviving 15A fuse is encouraging, but does not prove peak current is ≤15A.
+   • If 15A blows, measure actual DC current/reassess instead of blindly fitting a much larger fuse.
+   • 20A may be a later conservative test only if warranted.
+
+6. Focus grille / roof module
+   • Mock up placement before drilling.
+   • Preserve room/loom capacity for future center light bar.
+
+7. Solar
+   • Before purchase, mock a roughly 23 × 19 inch rectangle on the roof.
+   • Verify the chosen controller’s actual lead-acid charging/float profile.</pre></div></article><article class="page" id="page-5" data-title="projects — recent history">
+<div class="page-inner"><div class="chapter-kicker">🛠 Projects</div><h2>Projects — Recent History</h2>
+<pre>PROJECT 9 — BATTERY REPLACEMENT / REAR RELOCATION
+• Old accessory wiring + old battery setup was implicated in no-crank behavior.
+• With old accessory wiring removed and a new battery connected only to essential cart wiring, normal starting/running returned.
+• Accessories were then re-added after obsolete wiring removal and cart continued running normally.
+• New permanent 4 AWG positive to solenoid and 4 AWG negative to stock frame ground installed Aug. 2026.
+• Cart confirmed to run on only those two heavy leads.
+• Battery now in rear; temporary ratchet-strap + bungee restraint.
+• Permanent hold-down/final protection still open.
+
+PROJECT 10 — OLD WIRING IDENTIFICATION &amp; CLEANUP
+• Essential cart operation confirmed on the two heavy main leads.
+• Most smaller leads have been labeled.
+• Multiple useless/obsolete wiring setups removed, with additional cleanup progress Aug. 24, 2026.
+• Final accessory identification and parasitic-drain verification will happen during Project 11.
+• Preserve history rather than assuming every remaining old lead is unnecessary.
+
+PROJECT 11 — 12V FUSE PANEL / ACCESSORY CLEANUP
+• Evolved from an RV-style fuse/distribution idea into a compact OEM-style VW 12-slot block installation.
+• Common heavy-red feed confirmed for all 12 fuse positions.
+• Correct VW locking terminals ordered.
+• Planned 8 AWG positive feeder + isolated 8 AWG negative-bus system.
+• 12 prewired branch outputs with quick-disconnect ends.
+• Includes rear work light, third brake light, Focus center-grille roof module, roof harness, maintainer and utility/jump-stud planning.
+• Winch may become an ordinary fuse-panel circuit ONLY if testing proves its current/rating makes that appropriate.
+
+PROJECT 12 — AUXILIARY ALTERNATOR / INVERTER GENERATOR MODE
+• Combines earlier charging-system and generator concepts while preserving their history.
+• Keep stock starter/generator intact for normal use.
+• Add ~35–60A internally regulated alternator for on-demand charging.
+• Generator Mode can support inverter/tool use and isolate stock charging duty as appropriate.
+• Target loads: handheld corded saws/drills/grinders as applicable, small drill press, small compressor.
+• Charging another electric golf cart remains speculative.
+• Small flux-core welder remains far-future stretch, not design target.
+
+PROJECT 13 — WINCH
+• Older unidentified approximately 2,000-lb winch mounted at rear under step.
+• Mounting accidentally follows rear body/wheel-well lines well.
+• Original external wiring was destroyed.
+• Replacement external wiring is approximately 12 AWG because original appeared similarly thin.
+• Internal visible wiring appears around 12–16 AWG, but it is NOT yet proven that those wires carry full motor current.
+• Current draw and correct fuse size remain unknown.
+• Current plan is testing, not guessing.
+• Detachable clamp/utility-stud connection was brainstormed but is NOT committed.
+• If practical current is low enough, winch may stay permanently wired or potentially use a VW fuse-panel circuit.</pre></div></article><article class="page" id="page-6" data-title="brainstorming / future ideas">
+<div class="page-inner"><div class="chapter-kicker">💡 Maybe Later</div><h2>Brainstorming / Future Ideas</h2>
+<pre>A. SOLAR ROOF CHARGING — STRONG CANDIDATE
+• 50W monocrystalline system currently favored if it fits cleanly.
+• TCEUMIK kit shown: 50W panel, approximately 22.5 × 18.5 × 0.67 in, 12/24V 10A PWM controller, ~18 AWG supplied leads.
+• VEVOR 50W kit also considered; claimed external MPPT controller and adjustable bracket.
+• 20W remains viable as mostly maintenance/slow recovery.
+• 50W can provide roughly 3–3.5A at charging voltage in excellent sun and meaningfully replace accessory use.
+• Preferred permanent path:
+  roof panel → charge controller → appropriately fused battery/heavy-distribution connection.
+• Keep solar independent of ignition/accessory master so it maintains battery while parked.
+• Solar does NOT replace parasitic-draw diagnosis and does NOT directly power winch/inverter peaks.
+• Flat/low-profile roof mounting is favored for a moving cart unless a better mounting idea wins.
+
+B. EXTERNAL 12V UTILITY / JUMP STUDS
+• Covered heavy red/black remote battery posts through reinforced plastic body.
+• Intended for jumper cables, temporary 12V equipment, charging/testing and homemade RV/service adapters.
+• Must be true heavy-current wiring; never route jump current through the 8 AWG accessory panel.
+
+C. ROOF LIGHTING EXPANSION
+• Future compact LED light bar behind center of Focus grille.
+• Optional rear roof marker lights.
+• Optional future ON/OFF/AUTO(reverse) mode for rear work light.
+
+D. CENTRAL AUXILIARY SWITCH PANEL
+• Clean labeled controls for work light, grille light bar, Generator Mode, underglow, etc.
+
+E. MASTER ACCESSORY DISCONNECT
+• Kill ordinary accessory panel without disturbing essential cart wiring or deliberately always-on charging/maintenance circuits.
+
+F. FRONT/REAR 12V OR USB-C SERVICE OUTLETS
+
+G. REAR UTILITY / WORK STATION
+• Group work-light control, service power, winch control/connection and recovery hardware.
+
+H. REINFORCED FRONT/REAR RECOVERY POINTS
+• Separate from components not designed as tow points.
+
+I. ENGINE-HOUR METER
+• Particularly useful because the cart is modified to idle; mileage alone is a poor maintenance metric.
+
+J. TACHOMETER
+• Useful for clutch behavior, engine diagnostics and future Generator Mode RPM.
+
+K. ENGINE TEMPERATURE MONITORING
+• Oil or cylinder-head temperature becomes more useful if Generator Mode involves stationary elevated RPM.
+
+L. NEAR-BATTERY HIGH-CURRENT DISTRIBUTION STUDS/BUS
+• Optional if battery-terminal stacking eventually becomes excessive.
+• Not necessary solely because several properly installed ring terminals exist.
+
+M. POLARIZED HIGH-CURRENT QUICK CONNECTOR
+• Possible cleaner alternative to loose clamps for detachable winch/service power.
+
+N. EXTERNAL-STUD SERVICE ADAPTERS
+• Homemade leads/adapters for bench-testing RV/12V equipment from the cart.</pre></div></article><article class="page" id="page-7" data-title="complete modification history">
+<div class="page-inner"><div class="chapter-kicker">Legacy Manual / Preserved History</div><h2>Complete Modification History</h2>
+<pre>Performance:
+• Governor modified or bypassed.
+• Exact governor modification method unknown.
+• Cart runs much faster than stock.
+
+Engine:
+• Stock Kawasaki gas engine, exact model unknown.
+• Valve adjustment performed once by retired mechanic friend.
+• No known internal rebuild.
+• Original carburetor failure caused one major breakdown.
+• Carburetor now replaced preventively.
+
+Fuel System:
+• Fuel pump replaced yearly.
+• Fuel filters replaced yearly.
+• Air filter replaced yearly.
+• Spark plug replaced yearly.
+• Oil and oil filter replaced yearly.
+• Fuel cap upgraded with level gauge.
+• One fuel line replaced because it was too short.
+• Fuel tank otherwise stock.
+
+Intake:
+• Stock airbox.
+• Air filter replaced yearly.
+
+Exhaust:
+• Previous owner welded a bigger pipe onto the exhaust, likely for louder sound and/or perceived performance.
+• Current owner replaced exhaust with OEM-style replacement.
+
+Drive / Clutches:
+• Primary and secondary clutches replaced by owner.
+• Off-brand OEM-style replacements from Amazon.
+• Secondary clutch spring upgraded to red higher-torque spring.
+• Drive belt replaced twice.
+• Starter/generator belt replaced twice.
+• Belt replacements were due to previous installation mistakes, not cart failure.
+
+Suspension:
+• 6 inch Jake’s spindle lift kit.
+• Hydraulic front brake conversion.
+• Stiffer front springs.
+• Front shocks replaced.
+• Front bushings replaced approximately 3–4 times.
+• Bushing wear likely increased by 6 inch spindle lift, wheel spacers, brake conversion, stiffer springs, and rough riding.
+
+Steering:
+• Aftermarket steering wheel.
+• Tie rod ends replaced recently.
+• Steering box and linkage otherwise believed original.
+• Second alignment during ownership planned after tie rod replacement.
+
+Brakes:
+• Hydraulic front brakes.
+• Rear brakes stock as far as known.
+• Front-heavy braking/weight feel due to many front modifications and untouched rear.
+
+Wheels / Tires:
+• Current tires: 22x10-10.
+• Planned future tires: 20x10-10.
+• Planned future lift: 3 inch lift.
+
+Rear End:
+• Rear axle/differential untouched during current ownership.
+• Rear transaxle/differential oil service unknown prior to ownership.
+
+Electrical:
+• 12V system.
+• Main 12V battery.
+• Second smaller 12V battery under seat.
+• Batteries wired together as one system.
+• Factory charging system charges both.
+• Added trickle charger can charge both batteries through extension cord.
+• Voltage regulator replaced during ownership.
+• Starter/generator is same one that came with cart; believed OEM but not confirmed.
+• Voltage gauge reads around 18V+ but suspected faulty/inaccurate.
+• Possible battery drain or weak battery because cart may need a jump after sitting about a week.
+
+Accessories:
+• LED headlights originally intended for off-road rigs, installed in old lens openings.
+• Turn signals.
+• Horn.
+• Underglow.
+• Roof.
+• Windshield.
+• Manual wiper.
+• Seat belts.
+• 2 inch hitch receiver mounted to rear step/footrest for flipdown seats using 1/4 inch plate.</pre></div></article><article class="page" id="page-8" data-title="known issues and operating behavior">
+<div class="page-inner"><div class="chapter-kicker">Legacy Manual / Preserved History</div><h2>Known Issues and Operating Behavior</h2>
+<pre>Cold Starting:
+• Harder to start when cold.
+• In warm weather around 70°F+, usually no choke needed.
+• In colder weather, choke is used.
+• Sometimes starter spins but engine does not cough/fire.
+• Owner usually finds the throttle “sweet spot” to make it catch.
+• In rare cases, battery has been drained trying to start it.
+
+Warm Weather Starting Procedure:
+1. Put cart in neutral.
+2. Slowly press pedal to engage starter motor.
+3. Back off until engine starts/catches.
+4. Hold it and very slowly press until full pedal can be reached.
+5. Once full pedal can be reached, cart drives reliably at any speed.
+
+Cold Weather Starting:
+• Tolerances/feel are much tighter.
+• Choke required.
+• Less room for error in pedal position.
+
+Throttle / Bogging:
+• Runs well if throttle is applied gradually.
+• If throttle is applied too quickly, engine chugs/bogs.
+• Owner backs off and eases back in.
+• At steady throttle, it is stable.
+• Cold engine often stalls if throttle is applied too fast.
+• Warm engine only fully shuts off if severely abused, but can still stumble.
+
+Battery / Charging:
+• If left sitting around one week or more, may need a jump.
+• After jump-start, high idle for about 30 seconds usually makes it good to go.
+• No confirmed charging failure while running.
+• Voltage gauge likely faulty or miswired.
+
+Pinned Issues:
+• Exact engine model.
+• Speedometer type.
+• Voltage gauge wiring.
+• Exact dual-battery wiring configuration.
+• Battery brand/health.
+• Exact carburetor brand/source.
+• Exact belt part numbers.
+• Tire brand.</pre></div></article>
+<article class="page" id="page-9" data-title="maintenance schedule p10 s2 scheduled maintenance guide">
+<div class="page-inner"><div class="chapter-kicker">P10 • S2</div><h2>Scheduled Maintenance Guide</h2>
+<pre>SCHEDULING RULE
+Use MILEAGE OR ELAPSED TIME, whichever comes first.
+Never use engine-hour triggers.
+
+BASELINE
+Club Car manufacturer periodic-service guidance is the baseline.
+Where the cart's lift, higher speed, governor modification, hydraulic front brakes, wheel spacers, heavy work use, accessory wiring or relocated battery justify closer inspection, this manual uses a CART-SPECIFIC / CONSERVATIVE interval.
+
+A1 — Before Use / Every Drive
+• Tires and visible damage.
+• Steering and brake feel.
+• Fluid/fuel leaks.
+• Loose wheel/front-end hardware.
+• Abnormal belt/clutch noises.
+• Battery security/cables.
+• Loose/damaged wiring.
+• Exhaust clearance from wiring.
+
+A2 — Monthly
+• Engine oil level.
+• Cooling-air intake/debris.
+• Muffler/exhaust-area debris.
+• Tire pressure and condition.
+• Battery terminals and mounting.
+• 4 AWG main cables.
+• Accessory wiring/fuse system.
+• Fuel lines.
+• Engine/transaxle leaks.
+
+A3 — 250 Miles / 3 Months
+CART-SPECIFIC / CONSERVATIVE
+• Jake's lift/front suspension.
+• Wheel spacers.
+• Tie-rod ends and steering play.
+• Hydraulic front brakes/hoses.
+• Front hubs/bearings.
+• Drive belt and clutch area.
+• Battery mounting.
+• Electrical chafe and exhaust clearance.
+• Added hardware/accessories.
+
+A4 — 500 Miles / 6 Months
+• Front alignment/camber.
+• Steering.
+• Front suspension lubrication/inspection.
+• Complete brake inspection.
+• Brake/accelerator/shifter linkage.
+• Hydraulic front-brake system.
+• Electrical connections.
+• Belt and clutches.
+• Fuel lines.
+• Air-intake hoses/clamps.
+• Engine/transaxle leaks.
+• General fasteners.
+
+A5 — 1,000 Miles / 12 Months
+MAJOR SERVICE
+• Engine oil and filter.
+• Spark plug.
+• Air filter/intake.
+• Fuel system.
+• Drive belt and clutches.
+• Starter/generator and belt.
+• Battery/main electrical.
+• Accessory electrical.
+• Front suspension/lift/steering.
+• Wheels/tires/hubs/bearings.
+• Front hydraulic and rear brakes.
+• Transaxle/differential.
+• Exhaust/engine mounts.
+• Body/roof/added hardware.
+• Final operational test.
+
+A6 — 2,000 Miles / 24 Months
+• Deep fuel-system service.
+• Transaxle lubricant service/baseline.
+• Spark plug service.
+• Detailed clutch inspection.
+• Starter/generator inspection.
+• Suspension/bushing/shock inspection.
+• Steering and rear-brake inspection.
+• Hydraulic front-brake fluid/service assessment.
+• High-current electrical inspection.
+• Body/roof/accessory hardware.
+
+A7 — Seasonal / Storage
+• Battery/charging.
+• Fuel condition.
+• Tire pressure.
+• Engine/exhaust cleanliness.
+• Corrosion and rodent/wiring damage.
+• Return-to-service inspection.
+
+A8 — After Hard Use / Abnormal Event
+CART-SPECIFIC
+Use after towing, sustained high-speed operation, hard off-road use, impact, heavy winching, brake overheating, or a new vibration/noise.
+• Wheels/spacers.
+• Front-end hardware.
+• Belt/clutches.
+• Brakes.
+• Exhaust/wire clearance.
+• Hitch/winch mounts.
+• Battery/high-current connections.
+
+A9 — Unknown Baseline / Catch-Up Maintenance
+Track systems with uncertain previous service history until serviced once and dated.
+Current examples:
+• Transaxle lubricant history.
+• Rear-brake service history.
+• Starter/generator service history.
+• Some internal-engine and wheel/suspension service dates.
+
+PRINTABLE-CHECKLIST RULE
+Each expanded maintenance article includes a print-ready checklist at its end. Completed sheets can be kept as physical maintenance records.</pre>
+<div class="checklist">
+<h3>P10 S2 — Maintenance Schedule Quick Checklist</h3>
+<div class="meta"><label>Date:</label><label>Mileage:</label><label>Technician:</label><label>Next Due:</label></div>
+<div class="checkline">A1 Every-drive checks completed</div>
+<div class="checkline">A2 Monthly checks current</div>
+<div class="checkline">A3 250-mile / 3-month inspection current</div>
+<div class="checkline">A4 500-mile / 6-month service current</div>
+<div class="checkline">A5 1,000-mile / 12-month major service current</div>
+<div class="checkline">A6 2,000-mile / 24-month deep service current</div>
+<div class="checkline">Unknown-baseline items reviewed</div>
+<p>Repairs / Notes: ________________________________________________<br><br>_______________________________________________________________</p>
+<button class="print-check-btn" onclick="printChecklist(this)">Print This Checklist</button>
+</div></div></article><article class="page" id="page-10" data-title="engine oil and filter service">
+<div class="page-inner"><div class="chapter-kicker">Legacy Manual / Preserved History</div><h2>Engine Oil and Filter Service</h2>
+<pre>Purpose:
+Engine oil lubricates and protects internal engine components. The oil filter removes contaminants.
+
+Custom Interval:
+Yearly, based on owner’s preventive maintenance routine.
+
+Beginner Procedure:
+1. Park cart on level ground.
+2. Turn key off and allow engine to cool enough to work safely.
+3. Gather oil, filter, drain pan, wrench, rags, and gloves.
+4. Check current oil level and condition before draining.
+5. Place drain pan under engine.
+6. Remove drain plug carefully.
+7. Allow oil to drain fully.
+8. Remove and replace oil filter if equipped/applicable.
+9. Reinstall drain plug.
+10. Refill with correct oil specification and quantity after verifying manufacturer spec.
+11. Run engine briefly.
+12. Shut off, wait a moment, and recheck level.
+13. Inspect for leaks.
+14. Record service.
+
+Common Mistakes:
+• Overfilling.
+• Forgetting drain plug.
+• Leaving old filter gasket stuck.
+• Not checking for leaks.
+• Using unverified oil spec.
+
+Service Record:
+Date: __________
+Mileage/Hours: __________
+Oil Used: __________
+Filter Used: __________
+Notes: ______________________________________</pre></div></article><article class="page" id="page-11" data-title="fuel pump inspection and replacement">
+<div class="page-inner"><div class="chapter-kicker">Legacy Manual / Preserved History</div><h2>Fuel Pump Inspection and Replacement</h2>
+<pre>Purpose:
+The fuel pump moves fuel from the tank to the carburetor.
+
+Factory-Style Recommendation:
+Inspect during routine maintenance and replace if failing.
+
+Custom Recommendation:
+Replace yearly as preventive maintenance because the cart is governor-modified, driven harder than stock, and the part is relatively inexpensive.
+
+Tools:
+• Pliers.
+• Screwdrivers.
+• Socket set.
+• Shop towels.
+• Safety glasses.
+
+Procedure:
+1. Work in a ventilated area away from sparks/flames.
+2. Let engine cool.
+3. Locate fuel pump.
+4. Identify inlet, outlet, and pulse/vacuum line.
+5. Take a photo before removing hoses.
+6. Place towel under pump.
+7. Remove hoses carefully.
+8. Remove mounting hardware.
+9. Compare new pump to old pump.
+10. Install new pump in same orientation.
+11. Reconnect hoses and clamps.
+12. Start engine.
+13. Check for leaks.
+14. Test throttle response gently.
+
+Common Mistakes:
+• Reversing inlet and outlet.
+• Forgetting pulse line.
+• Reusing cracked fuel hose.
+• Not replacing/inspecting fuel filter at the same time.
+
+Service Record:
+Date: __________
+Brand/Part #: __________
+Notes: ______________________________________</pre></div></article><article class="page" id="page-12" data-title="carburetor adjustment">
+<div class="page-inner"><div class="chapter-kicker">Legacy Manual / Preserved History</div><h2>Carburetor Adjustment</h2>
+<pre>Purpose:
+The carburetor meters fuel and air. Proper adjustment improves idle, starting, throttle response, and reliability.
+
+Owner-Specific Notes:
+This cart has:
+• Difficult cold starts.
+• Bogging if throttle is opened too quickly.
+• Smooth operation once warm with gradual pedal input.
+• Stable steady-throttle cruising.
+• A history of carburetor failure causing the only major breakdown.
+
+Do Not Adjust Until Verified:
+• Fresh fuel.
+• Clean air filter.
+• Clean fuel filter.
+• Proper fuel delivery.
+• Correct spark plug.
+• Choke operation.
+• No vacuum leaks.
+• Engine fully warm.
+
+Tools:
+• Flat screwdriver.
+• Tachometer recommended.
+• Flashlight.
+• Safety glasses.
+
+Procedure:
+1. Start engine and warm fully.
+2. Observe idle behavior.
+3. Identify idle speed screw and mixture screw if equipped.
+4. Adjust idle speed in tiny increments.
+5. If mixture screw is adjustable, move only 1/8 turn at a time.
+6. Wait after each adjustment.
+7. Test gradual throttle.
+8. Do not tune around another mechanical fault.
+
+Cart-Specific Warning:
+Rapid-throttle bogging is documented and may involve governor/throttle linkage, fuel pump output, vacuum pulse signal, carburetor quality, choke operation, or ignition behavior. Do not assume the carburetor alone is the cause.
+
+Verification:
+• Starts acceptably.
+• Idles smoothly.
+• Accepts gradual throttle.
+• Returns to idle.
+• Does not leak fuel.
+
+Service Record:
+Date: __________
+Adjustment Made: __________
+Result: ______________________________________</pre></div></article><article class="page" id="page-13" data-title="carburetor replacement">
+<div class="page-inner"><div class="chapter-kicker">Legacy Manual / Preserved History</div><h2>Carburetor Replacement</h2>
+<pre>Purpose:
+Replacement may be needed if the carburetor is dirty, damaged, worn, unreliable, or if owner chooses preventive replacement.
+
+Owner History:
+The original carburetor replacement was due to a carburetor problem that caused the only major breakdown. Since then, the owner replaces carburetors preventively because the part is cheap, quality varies, and the cart is driven harder than stock.
+
+Procedure:
+1. Take photos of linkage, choke cable, fuel line, and mounting before removal.
+2. Turn key off and let engine cool.
+3. Remove air intake components as needed.
+4. Disconnect fuel line and plug/cap safely.
+5. Disconnect throttle linkage carefully.
+6. Disconnect choke linkage/cable.
+7. Remove mounting hardware.
+8. Remove old carburetor and gasket.
+9. Clean mating surfaces without gouging.
+10. Install new gasket.
+11. Install new carburetor.
+12. Reconnect linkages exactly as photographed.
+13. Reconnect fuel line.
+14. Check throttle and choke movement before starting.
+15. Start engine and check for leaks.
+16. Warm engine and verify throttle response.
+
+Common Mistakes:
+• Mixing up linkage positions.
+• Reusing bad gasket.
+• Over-tightening carb mounting bolts.
+• Forgetting to verify choke movement.
+• Adjusting too much before engine is warm.
+
+Service Record:
+Date: __________
+Carb Brand/Source: __________
+Reason: Preventive / Failure / Diagnosis
+Notes: ______________________________________</pre></div></article><article class="page" id="page-14" data-title="suspension and steering">
+<div class="page-inner"><div class="chapter-kicker">Legacy Manual / Preserved History</div><h2>Suspension and Steering</h2>
+<pre>Current Setup:
+• 6 inch Jake’s spindle lift.
+• Stiffer springs.
+• Wheel spacers due to hydraulic brake conversion.
+• Front shocks replaced.
+• Front hubs and bearings replaced.
+• Tie rod ends replaced recently.
+• Aftermarket steering wheel.
+• Steering box/linkage otherwise believed original.
+
+Known Wear Pattern:
+Front bushings replaced about 3–4 times.
+
+Likely Reasons:
+• 6 inch spindle lift adds leverage.
+• Wheel spacers increase stress.
+• Hydraulic brake conversion requires spacers.
+• Stiffer springs add stress.
+• Owner rides rough/aggressively.
+
+Future Plan:
+• Lower from 6 inch lift to 3 inch lift.
+• Switch from 22x10-10 to 20x10-10 wheel/tire combo.
+• Alignment planned after tie rod replacement.
+
+Inspection:
+• Check bushing play.
+• Check tie rod ends.
+• Check shock mounts.
+• Check lift hardware.
+• Check wheel spacers.
+• Check lug nuts.
+• Check steering free play.
+• Check front hubs/bearings.
+
+Service Record:
+Date: __________
+Work Performed: __________
+Alignment Done? Yes / No
+Notes: ______________________________________</pre></div></article><article class="page" id="page-15" data-title="brake system">
+<div class="page-inner"><div class="chapter-kicker">Legacy Manual / Preserved History</div><h2>Brake System</h2>
+<pre>Current Setup:
+• Hydraulic front brake conversion.
+• Rear brakes believed stock.
+• Front-heavy braking/weight feel.
+
+Owner Assessment:
+Front-heavy behavior is expected because many modifications are in front and rear remains mostly stock.
+
+Inspection:
+• Check brake pedal feel.
+• Check for leaks.
+• Inspect front calipers/pads.
+• Inspect brake hoses.
+• Inspect rear brake function.
+• Flush hydraulic front brake fluid about every 2 years or when fluid condition requires.
+
+Warning Signs:
+• Pulling left/right.
+• Soft pedal.
+• Fluid leaks.
+• Grinding.
+• Sudden loss of braking.
+• Uneven braking.
+
+Service Record:
+Date: __________
+Brake Work: __________
+Fluid Used: __________
+Notes: ______________________________________</pre></div></article><article class="page" id="page-16" data-title="rear transaxle / differential">
+<div class="page-inner"><div class="chapter-kicker">Legacy Manual / Preserved History</div><h2>Rear Transaxle / Differential</h2>
+<pre>Status:
+• Rear end untouched during ownership.
+• Gear oil service unknown before ownership.
+• No known current rear-end noise or failure.
+
+Recommendation:
+Change rear transaxle/differential oil as a baseline service item because history is unknown.
+
+Beginner Procedure Overview:
+1. Verify correct fluid specification from manufacturer documentation.
+2. Park level and secure cart.
+3. Locate fill and drain plugs.
+4. Remove fill plug first to make sure it can be refilled.
+5. Drain old fluid.
+6. Inspect old fluid for metal, water, or burnt smell.
+7. Reinstall drain plug.
+8. Fill to correct level.
+9. Reinstall fill plug.
+10. Test drive and inspect for leaks.
+
+Service Record:
+Date: __________
+Fluid Used: __________
+Amount: __________
+Notes: ______________________________________</pre></div></article><article class="page" id="page-17" data-title="parts, hardware &amp; specifications">
+<div class="page-inner"><div class="chapter-kicker">Legacy Manual / Preserved History</div><h2>Parts, Hardware &amp; Specifications</h2>
+<pre>Confirmed / Working Reference:
+
+Secondary Driven Clutch Retaining Bolt:
+• 5/16-18 UNC x 3/4 inch.
+• Grade 8 SAE acceptable replacement.
+• Use OEM washer.
+• Use blue Loctite 243 preferred or 242 acceptable.
+• Do not use red thread locker for normal service.
+
+Current Known Tire Size:
+• 22x10-10.
+
+Planned Tire Size:
+• 20x10-10.
+
+Known Accessories / Parts:
+• 6 inch Jake’s spindle lift.
+• Hydraulic front brake conversion.
+• Red higher-torque secondary clutch spring.
+• OEM-style aftermarket primary and secondary clutches.
+• OEM-style exhaust replacement.
+• Fuel cap with level gauge.
+• 2 inch hitch receiver.
+
+Common Consumables:
+• Engine oil.
+• Oil filter.
+• Spark plug.
+• Air filter.
+• Fuel filter.
+• Fuel pump.
+• Carburetor.
+• Drive belt.
+• Starter/generator belt.
+• Brake fluid.
+• Gear oil.
+• Blue thread locker.
+• Anti-seize.
+• Dielectric grease.
+• Fuel hose.
+• Hose clamps.
+• Electrical terminals.
+• Heat shrink.
+
+Parts To Add When Confirmed:
+• Engine model.
+• Oil filter part number.
+• Spark plug part number.
+• Air filter part number.
+• Fuel filter part number.
+• Fuel pump part number.
+• Carburetor brand/source.
+• Drive belt part number.
+• Starter/generator belt part number.
+• Front bushing kit part number.
+• Tie rod end part number.
+• Front hub/bearing part numbers.
+• Brake pad type.
+• Battery brand/group size.
+• Voltage regulator part number.</pre></div></article><article class="page" id="page-18" data-title="repair history">
+<div class="page-inner"><div class="chapter-kicker">Legacy Manual / Preserved History</div><h2>Repair History</h2>
+<pre>Major Breakdown:
+Problem: Cart broke down once during ownership.
+Cause: Carburetor problem.
+Fix: Carburetor replaced.
+Lesson: Fuel system reliability is important. Owner now treats carburetor as preventive maintenance.
+
+Valve Service:
+Work: Valve adjustment performed once.
+Performed By: Retired mechanic friend.
+Reason: Maintenance/service history.
+
+Belt Replacement History:
+Work: Drive belt and starter/generator belt each replaced twice.
+Cause: Earlier installation mistakes damaged belts.
+Status: Installed correctly now.
+
+Front Suspension:
+Work: Front bushings replaced approximately 3–4 times.
+Cause: Lift/spacers/brake conversion/stiffer springs/aggressive riding.
+Status: Ongoing high-wear area.
+
+Tie Rods:
+Work: Tie rod ends replaced recently.
+Follow-Up: Alignment planned.
+
+Voltage Regulator:
+Work: Voltage regulator replaced.
+Reason: Regulator on cart when purchased was dead.
+Working Theory: Previous owner accessories may have overloaded system.
+
+Secondary Clutch Bolt:
+Problem: Bolt snapped flush/below surface during reinstall.
+Cause: Large impact wrench shock load.
+Fix Plan: Drill/extract, inspect threads, replace with correct bolt.
+Lesson: Avoid final tightening critical retaining bolts with big impact.</pre></div></article><article class="page" id="page-19" data-title="printable service record pages">
+<div class="page-inner"><div class="chapter-kicker">Legacy Manual / Preserved History</div><h2>Printable Service Record Pages</h2>
+<pre>General Maintenance Record:
+Date: __________
+Mileage/Hours: __________
+Task: ______________________________________
+Parts Used: ______________________________________
+Brand/Part Number: ______________________________________
+Cost: __________
+Performed By: __________
+Next Due: __________
+Notes: ______________________________________
+
+Repair Record:
+Date: __________
+Problem: ______________________________________
+Symptoms: ______________________________________
+Diagnosis: ______________________________________
+Parts Used: ______________________________________
+Fix: ______________________________________
+Lesson Learned: ______________________________________
+
+Parts Inventory:
+Part: ______________________________________
+Spec/Number: ______________________________________
+Brand: ______________________________________
+Source: ______________________________________
+Quantity On Hand: __________
+Notes: ______________________________________
+
+Fuel Log:
+Date: __________
+Fuel Amount: __________
+Fuel Type: __________
+Stabilizer Used: Yes / No
+Notes: ______________________________________
+
+Modification Log:
+Date: __________
+Modification: ______________________________________
+Reason: ______________________________________
+Parts Used: ______________________________________
+Effect on Maintenance: ______________________________________
+Notes: ______________________________________
+
+Inspection Checklist:
+Date: __________
+Tires: OK / Needs Work
+Brakes: OK / Needs Work
+Steering: OK / Needs Work
+Suspension: OK / Needs Work
+Fuel System: OK / Needs Work
+Electrical: OK / Needs Work
+Notes: ______________________________________</pre></div></article><article class="page" id="page-20" data-title="electrical architecture — current plan">
+<div class="page-inner"><div class="chapter-kicker">Wiring Reference</div><h2>Electrical Architecture — Current Plan</h2>
+<pre>ESSENTIAL CART
+Battery + → 4 AWG → solenoid / stock cart system
+Battery − → 4 AWG → stock frame-ground location
+
+ORDINARY ACCESSORIES
+Battery + → near-battery main accessory fuse → 8 AWG → VW 12-slot fuse block
+VW block → individually sized fuses → ~12 AWG branch leads → quick disconnects → accessories
+
+Battery − → 8 AWG → isolated negative bus mounted to plastic
+Negative bus → accessory negative loom → accessories
+
+HIGH-CURRENT / SPECIAL SYSTEMS
+• External jump/utility studs: dedicated heavy cable sized for actual jump/service current.
+• Winch: connection method and fuse placement remain pending current test.
+• Future inverter/alternator Generator Mode: dedicated high-current architecture; do not route through ordinary 12-slot branch block.
+• Solar/maintainer: charging path should remain available while cart is parked.
+
+DESIGN PHILOSOPHY
+• Factory/cart electrical system stays simple and independent.
+• Added ordinary accessories have one organized fused-positive system and one organized copper negative-return system.
+• Label everything.
+• Protect every long positive feeder near its source.
+• Use grommets/loom/strain relief through body or electrical-box penetrations.</pre></div></article><article class="page" id="page-21" data-title="clutch / belt update — blt-0100">
+<div class="page-inner"><div class="chapter-kicker">Drive System</div><h2>Clutch / Belt Update — BLT-0100</h2>
+<pre>CURRENT BELT
+Red Hawk BLT-0100 Severe Duty
+
+RESULTS
+• Major improvement in acceleration and pulling/climbing feel.
+• Small trailer load was essentially unnoticeable under acceleration/climbing; mostly felt during braking.
+• Likely similar top speed to previous setup; same-road test pending.
+• Engine reaches near-max RPM early, then vehicle speed continues increasing as CVT shifts.
+• High-RPM operation sounds louder but feels smoother.
+• Longer idle-down period after hard/high-RPM operation before comfortable F/R shifting.
+• Firm/aggressive engagement feels like added torque rather than malfunction.
+• No grabbing, shudder, slip or abnormal belt wear observed.
+• Reapplication after deceleration is immediate and smooth.
+• Low-throttle bog around the lead-in to ~1/4 throttle predates this belt.
+• New idle squeak near primary center/belt contact remains an observation item.
+• Secondary full opening not visually confirmed; similar top speed makes it lower priority.</pre></div></article><article class="page" id="page-22" data-title="electrical / battery update">
+<div class="page-inner"><div class="chapter-kicker">Current State</div><h2>Electrical / Battery Update</h2>
+<pre>BATTERY / STARTING
+• Prior no-crank issue is RESOLVED.
+• Removing old accessory wiring and using a new battery with only essential wiring restored normal operation.
+• Accessory cleanup retained normal starting.
+• New 4 AWG main positive and negative cables are installed.
+• Cart runs with only those two mains.
+
+TEMPORARY ACCESSORY CONNECTION
+• Accessories currently still use a temporary alligator-clip battery connection to bolted ring terminals, insulated with tape.
+• This is intentionally temporary until VW fuse-panel conversion.
+• Do not treat this junction as final.
+
+BATTERY MOUNT
+• Battery relocated to rear-seat area.
+• Current ratchet strap + bungee is temporary.
+• Permanent rigid hold-down remains required.
+
+CHARGING
+• Stock charging system retained.
+• Voltage regulator previously replaced.
+• Existing Sunpro-style gauge reads 18+ V and is considered suspect; replacement is planned.
+• Future solar and auxiliary alternator concepts are separate additions, not replacements for fixing faults.</pre></div></article>
+<article class="page" id="page-23" data-title="p10 s1 club car master reference general parts breakdown">
+<div class="page-inner"><div class="chapter-kicker">P10 • S1</div><h2>Club Car Master Reference — General Parts Breakdown</h2>
+<pre>PURPOSE
+This is the cart encyclopedia layer. It preserves confirmed parts, modifications, expected-stock information and unknowns separately.
+
+STATUS LABELS
+✅ CONFIRMED
+🔧 MODIFIED / REPLACED
+🟡 ASSUMED STOCK — NEEDS CONFIRMATION
+❓ UNKNOWN — IDENTIFICATION REQUIRED
+
+REFERENCE RULE
+When the cart has not been physically identified, use 2003 Club Car manufacturer documentation only as an EXPECTED STOCK reference. Never silently convert assumed-stock information into confirmed fact.
+
+OEM DOCUMENTS SAVED
+• 2003 DS Illustrated Parts List: 102318701, edition 1202F1004C.
+• Main service manual: 102318801.
+• FE290 gasoline supplement: 102318807.
+
+ENGINE BASELINE
+🟡 2003 DS gasoline documentation points to Kawasaki FE290 OHV.
+Expected stock engine assembly reference: 101953901.
+Physical engine identification remains required.
+
+S1 INDEX
+1 Engine
+2 Carburetor
+3 Fuel System
+4 Starter/Generator
+5 Voltage Regulator
+6 Battery/Main Wiring
+7 Primary Clutch
+8 Secondary Clutch
+9 Drive Belt
+10 Exhaust
+11 Front Suspension/Lift
+12 Steering
+13 Front Brakes
+14 Rear Brakes
+15 Front Wheels/Tires
+16 Rear Wheels/Tires
+17 VW Fuse Block
+18 Voltmeter
+19 Headlights
+20 Turn Signals
+21 Horn
+22 Underglow
+23 Winch
+24 Rear Work Light
+25 External Battery/Utility Studs
+26 Transaxle/Differential
+27 F/R Shifter & Linkage
+28 Governor
+29 Engine Ignition
+30 Flywheel/Cooling Fan/Shrouds
+31 Engine Lubrication
+32 Cylinder Head/Valvetrain
+33 Crankcase/Crankshaft/Camshaft/Internal Engine
+34 Air Intake/Air Box
+35 Engine Mounts
+36 Starter/Generator Belt & Mounting/Adjustment
+37 Solenoid
+38 Key Switch/Main Control Wiring
+39 Pedal Start/Accelerator Electrical
+40 Accelerator Pedal/Mechanical Linkage
+41 Brake Pedal
+42 Parking Brake
+43 Rear Suspension/Leaf Springs
+44 Rear Shocks
+45 Rear Axles/Hubs/Bearings
+46 Front Hubs/Bearings
+47 Rack-and-Pinion Steering Gear
+48 Steering Column/Shaft
+49 Frame
+50 Front Body/Cowl
+51 Rear Body/Fenders
+52 Floor/Floor Mat
+53 Seat Bottom/Back
+54 Rear Seat Assembly
+55 Roof
+56 Roof Supports/Struts
+57 Windshield
+58 Manual Wiper
+59 Seat Belts
+60 Rear Hitch
+61 Fuel Cap/Gauge
+62 Factory Electrical Component Box
+63 Factory Fuse/Protection
+64 Factory Wiring Harness
+65 Accessory Wiring Harness
+66 Brake/Tail Lights
+67 High-Mounted Brake Light
+68 Focus Center-Grille/Amber Elements
+69 Roof Electrical Backbone
+70 Solar Charging System
+71 Battery Maintainer Connection
+72 Auxiliary Alternator
+73 Inverter
+74 Misc Fasteners/Hardware</pre>
+</div></article>
+
+<article class="page" id="page-24" data-title="p10 s2 a5 1000 mile 12 month major service">
+<div class="page-inner"><div class="chapter-kicker">P10 • S2 • A5</div><h2>1,000-Mile / 12-Month Major Service</h2>
+<pre>INTERVAL
+Every 1,000 miles OR 12 months, whichever comes first.
+
+A5.1 — ENGINE OIL & FILTER
+• Warm engine enough to help oil drain.
+• Check for leaks before beginning.
+• Drain engine oil.
+• Replace oil filter.
+• Refill with correct oil for the physically confirmed engine.
+• Verify level; do not overfill.
+• Run and inspect drain/filter areas for leaks.
+• Recheck level after shutdown.
+NOTE: Exact capacity/viscosity stays pending until engine model is physically confirmed.
+
+A5.2 — AIR INTAKE & FILTER
+• Remove and inspect air-filter element.
+• Replace annually under established owner routine.
+• Clean air-box interior without allowing debris into intake.
+• Inspect intake hose for cracks/hardening.
+• Check clamps/connections and intake opening.
+
+A5.3 — SPARK PLUG
+• Remove and inspect deposits/electrode wear/color.
+• Replace under established annual preventive routine.
+• Record plug condition as evidence for P3 cold-start/bog diagnosis.
+• Exact plug/gap remains tied to engine confirmation.
+
+A5.4 — FUEL SYSTEM
+• Replace fuel filter(s) under established annual routine.
+• Inspect fuel pump.
+• Inspect all fuel hose for cracking, hardening, rubbing or leakage.
+• Inspect clamps/connections, tank/pickup area, cap seal and carb exterior.
+NOTE: Annual fuel-pump replacement is the owner's preventive strategy, not an OEM annual replacement requirement.
+
+A5.5 — DRIVE BELT & CLUTCHES
+• Inspect Red Hawk BLT-0100 for cracks, fraying, glazing/burning and uneven wear.
+• Inspect primary and secondary sheaves.
+• Check unusual play and secondary retaining bolt/washer.
+• Look for unintended belt contact.
+• Listen for known idle squeak.
+• Do not replace BLT-0100 solely because 1,000 miles elapsed if condition remains good.
+
+A5.6 — STARTER/GENERATOR & BELT
+• Inspect belt condition/tension.
+• Inspect pulley alignment and mounting/adjustment hardware.
+• Inspect electrical terminals/cables.
+• Listen for abnormal bearing/bushing noise.
+• Verify charging behavior.
+
+A5.7 — BATTERY & MAIN ELECTRICAL
+• Inspect relocated rear battery and hold-down.
+• Check positive-terminal protection.
+• Inspect 4 AWG positive and negative cables.
+• Check terminals for corrosion/heat/discoloration.
+• Inspect routing/chafe protection and frame-ground connection.
+• Check charging voltage.
+Current Sunpro CP8205 behavior: a hair over 12V engine-off and about 13–14V running.
+
+A5.8 — ACCESSORY ELECTRICAL
+• Inspect VW 12-position fuse block and permanent mounting.
+• Inspect all output wires and current fuse map.
+• Verify main accessory fuse and branch fuse ratings.
+• Inspect isolated negative bus, cowl wiring, loom, grommets and strain relief.
+• Look specifically for wiring near hot/moving components.
+• Winch remains OUT OF SERVICE until muffler-damaged wiring is rebuilt.
+
+A5.9 — FRONT SUSPENSION / LIFT / STEERING
+• Inspect Jake's 6-inch spindle-lift hardware.
+• Inspect spindle/kingpin areas, shocks, springs and bushings.
+• Inspect tie-rod ends and steering linkage play.
+• Inspect rack/column connections and wheel spacers.
+• Check wheel/hub hardware, alignment/toe and tire wear.
+NOTE: Front bushings are a known high-wear area on this cart.
+
+A5.10 — WHEELS / TIRES / HUBS / BEARINGS
+• Inspect all tires for damage, tread and uneven wear.
+• Check cold pressure.
+• Inspect wheels for bends/cracks.
+• Verify lug hardware.
+• Check front hubs/bearings for looseness/noise.
+• Check rear hub/axle area.
+Current transition: front axle planned for Antego ATW-045 20x10.00-10 on 10x7 wheels; rear remains matched 22x10-10 until second pair is ordered after evaluation.
+
+A5.11 — BRAKES
+Front hydraulic:
+• Inspect hoses, fittings, calipers, pads and rotors.
+• Check fluid condition/level as applicable.
+• Check pedal feel and equal apply/release.
+Rear stock-type:
+• Inspect operation, cables/linkages and parking brake.
+• Inspect internal rear components when due/accessible.
+
+A5.12 — TRANSAXLE / DIFFERENTIAL
+• Inspect housing and axle-seal areas for leaks.
+• Check lubricant level.
+• Listen for abnormal gear/bearing noise.
+• Inspect mounting hardware.
+BASELINE HISTORY UNKNOWN — remains tracked under A9 until serviced/documented.
+
+A5.13 — EXHAUST & ENGINE MOUNTING
+• Inspect muffler, pipe/joints and mounting.
+• Inspect engine mounts/excessive movement.
+• Check surrounding wires/hoses for heat damage.
+• Verify nothing can fall against muffler.
+
+A5.14 — BODY / ROOF / ADDED HARDWARE
+• Windshield and manual wiper.
+• Roof fasteners/supports.
+• Seat belts/mounting points.
+• Rear hitch.
+• Rear work-light mount.
+• Winch mount.
+• Headlights, turn signals and underglow.
+• Any installed roof lights.
+• External utility studs once installed.
+
+A5.15 — FINAL OPERATIONAL TEST
+• Cold start.
+• Charging voltage.
+• Idle sound.
+• Throttle response.
+• Low-speed steering/brakes.
+• Parking brake.
+• Lights/horn/signals.
+• Progressively faster road test.
+• Recheck leaks and anything disturbed during service.
+
+RECORD AFTER COMPLETION
+Date, odometer mileage, oil/filter, air filter, spark plug, fuel filters, parts replaced, measurements/findings, repairs needed, next due mileage/date.</pre>
+
+<div class="checklist">
+<h3>A5 Printable Major-Service Checklist</h3>
+<div class="meta"><label>Date:</label><label>Odometer:</label><label>Performed By:</label><label>Next Due:</label></div>
+<div class="checkline">Engine oil drained and replaced</div>
+<div class="checkline">Oil filter replaced</div>
+<div class="checkline">Oil level/leaks rechecked after run</div>
+<div class="checkline">Air filter replaced/inspected; air box and intake checked</div>
+<div class="checkline">Spark plug inspected/replaced; condition recorded</div>
+<div class="checkline">Fuel filter(s) serviced</div>
+<div class="checkline">Fuel pump/lines/clamps/tank/carb exterior inspected</div>
+<div class="checkline">BLT-0100 belt inspected</div>
+<div class="checkline">Primary and secondary clutches inspected</div>
+<div class="checkline">Starter/generator belt, mounts, wiring and charging checked</div>
+<div class="checkline">Battery hold-down, terminals and 4 AWG cables checked</div>
+<div class="checkline">VW fuse block, accessory wiring and negative system inspected</div>
+<div class="checkline">Lift, bushings, tie rods, steering and spacers inspected</div>
+<div class="checkline">Alignment/toe and tire wear checked</div>
+<div class="checkline">Wheels, lugs, hubs and bearings inspected</div>
+<div class="checkline">Front hydraulic brakes inspected</div>
+<div class="checkline">Rear brakes and parking brake inspected</div>
+<div class="checkline">Transaxle level/leaks/noise inspected</div>
+<div class="checkline">Exhaust, engine mounts and heat clearances inspected</div>
+<div class="checkline">Roof/body/hitch/accessory mounts inspected</div>
+<div class="checkline">Cold-start and full operational test completed</div>
+<p>Oil used: __________________________ &nbsp; Filter: __________________________</p>
+<p>Spark plug: ________________________ &nbsp; Air filter: _______________________</p>
+<p>Fuel filter(s): _____________________ &nbsp; Other parts: ______________________</p>
+<p>Measurements / Findings:<br><br>_______________________________________________________________<br><br>_______________________________________________________________</p>
+<p>Repairs Needed / Notes:<br><br>_______________________________________________________________<br><br>_______________________________________________________________</p>
+<button class="print-check-btn" onclick="printChecklist(this)">Print A5 Checklist Only</button>
+</div></div></article>
+
+<article class="page" id="page-25" data-title="september 2026 recent updates tires voltage gauge fuse block winch utility studs">
+<div class="page-inner"><div class="chapter-kicker">September 2026</div><h2>Recent Confirmed Updates</h2>
+<pre>TIRES / WHEELS
+• Sept. 8, 2026: front passenger 22x10-10 tire popped.
+• Exact ordered replacement: Antego ATW-045 20x10.00-10 Golf Cart Tire & 10x7 Matte Black Wheel, Set of 2.
+• User expected four but listing was a set of two.
+• Plan is BOTH new 20x10-10 assemblies on front axle, matched 22x10-10 pair temporarily on rear.
+• If front pair proves good for bead sealing, valve stems, roundness, vibration, clearance, offset/backspacing and handling, order two more identical for rear.
+• Long-term target remains 20x10-10 all four corners if the pair passes.
+
+VOLTAGE GAUGE — RESOLVED
+• Old Sunpro-style gauge's 18V+ indication was inaccurate.
+• Exact replacement installed: Sunpro CP8205 StyleLine Voltmeter.
+• Engine off: a hair over 12V.
+• Engine running: approximately 13–14V.
+• This closes the old voltage-gauge fault pin.
+
+VW FUSE BLOCK
+• One 12-position block is installed in the electrical-box area.
+• All 12 output positions now have wires.
+• Temporary retention: zip ties.
+• Permanent mechanical mounting pending.
+• Main feed reported 20A — verify.
+• LED circuit reported 3A — verify.
+• Horn reported 5A — verify.
+• Exact branch Fuse Locations remain to be mapped.
+• Use Fuse Location 1 through Fuse Location 12, front to rear.
+
+EXTERNAL UTILITY / JUMP STUDS
+• Hardware received: RED WOLF Remote Battery Terminal.
+• 3/8 in / M10 studs, listing claims 250A max DC 12V.
+• Install through reinforced plastic with backing reinforcement, covers and clear polarity marking.
+• Heavy jump/service current must go directly to battery/heavy distribution — never through 8 AWG accessory panel.
+
+WINCH
+• OUT OF SERVICE.
+• External wire contacted muffler and melted.
+• Rewire before use.
+• Trace internal current path first; do not size new external cable/fuse solely from smallest visible internal wire.
+• New routing must have deliberate exhaust clearance, secure retention and abrasion protection.
+
+APP UPDATE WORKFLOW
+Every confirmed cart/manual update is treated as pending app content.
+When owner says “Update the app,” generate a fresh single-file HTML incorporating accumulated changes.</pre>
+</div></article>
+</section>
+<section class="controls"><button class="primary" id="prevBtn">← Previous</button><div class="pagecount" id="pageCount"></div><button class="primary" id="nextBtn">Next →</button></section></main>
+<script>
+const pages=[...document.querySelectorAll('.page')]; let current=Number(localStorage.getItem('danielsClubCarManualPage')||0); const drawer=document.getElementById('drawer');
+function showPage(i){current=Math.max(0,Math.min(pages.length-1,i));pages.forEach((p,n)=>p.classList.toggle('active',n===current));document.getElementById('pageCount').textContent=`${current+1} / ${pages.length}`;localStorage.setItem('danielsClubCarManualPage',current);window.scrollTo({top:0,behavior:'smooth'})}
+document.getElementById('prevBtn').onclick=()=>showPage(current-1);document.getElementById('nextBtn').onclick=()=>showPage(current+1);
+document.getElementById('openToc').onclick=()=>drawer.classList.add('open');document.getElementById('closeToc').onclick=()=>drawer.classList.remove('open');
+drawer.addEventListener('click',e=>{if(e.target===drawer)drawer.classList.remove('open')});
+document.querySelectorAll('.toc-item').forEach(b=>b.onclick=()=>{showPage(Number(b.dataset.page));drawer.classList.remove('open')});
+document.getElementById('search').addEventListener('input',e=>{const q=e.target.value.toLowerCase();document.querySelectorAll('.toc-item').forEach(b=>{const i=Number(b.dataset.page);b.style.display=(b.textContent.toLowerCase().includes(q)||pages[i].textContent.toLowerCase().includes(q))?'flex':'none'})});
+document.getElementById('printBtn').onclick=()=>window.print(); showPage(current);
+
+function printChecklist(btn){
+  const page=btn.closest('.page');
+  document.body.classList.add('print-one');
+  page.classList.add('print-target');
+  window.print();
+  setTimeout(()=>{document.body.classList.remove('print-one');page.classList.remove('print-target')},300);
+}
+
+</script></body></html>
